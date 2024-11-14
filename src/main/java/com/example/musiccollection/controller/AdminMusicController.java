@@ -37,7 +37,7 @@ public class AdminMusicController {
      }
      
      @GetMapping
-     public String musicIndex(Model model, @PageableDefault(page = 0, size = 10, sort = "musicId", direction = Direction.ASC) Pageable pageable, @RequestParam(name = "songTitle", required = false) String songTitle, @RequestParam(name = "artist", required = false) String artist) {
+     public String index(Model model, @PageableDefault(page = 0, size = 10, sort = "musicId", direction = Direction.ASC) Pageable pageable, @RequestParam(name = "songTitle", required = false) String songTitle, @RequestParam(name = "artist", required = false) String artist) {
     	 Page<Music> musicPage;
     	 
     	 if ((songTitle != null && !songTitle.isEmpty()) || (artist != null && !artist.isEmpty())) {
@@ -48,7 +48,7 @@ public class AdminMusicController {
     			 artist = artist.toLowerCase();
     		 }
     		 
-    		 musicPage = musicRepository.findBySongTitleAndArtistLike(songTitle, artist, pageable);
+    		 musicPage = musicRepository.findBySongTitleOrArtistLike(songTitle, artist, pageable);
     	 } else {
     		 musicPage = musicRepository.findAll(pageable);
     	 }

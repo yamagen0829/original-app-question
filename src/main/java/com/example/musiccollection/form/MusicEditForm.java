@@ -13,7 +13,7 @@ import lombok.Data;
 public class MusicEditForm {
 	    @NotNull
 	    private Integer MusicId;
-	
+	    
 	    @NotBlank(message = "曲名を入力してください。")
 	    private String songTitle;
 	    

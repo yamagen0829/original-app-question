@@ -1,5 +1,5 @@
 <!DOCTYPE html>
- <html xmlns:th="https://www.thymeleaf.org">
+ <html xmlns:th="https://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
      <head>
          <div th:replace="~{fragment :: meta}"></div>    
               
@@ -18,7 +18,7 @@
                      <div class="row justify-content-center">
                          <div class="col-xxl-9 col-xl-10 col-lg-11">
                              
-                             <h1 class="mb-4 text-center">曲一覧</h1>   
+                             <h1 class="mb-4 text-center text-white">曲一覧</h1>   
                              
                              <div class="d-flex justify-content-between align-items-end flex-wrap">
 								 <form method="get" th:action="@{/admin/musics}" class="mb-3">
